@@ -1,0 +1,112 @@
+/*
+ * Tokens do Hub de Indicadores (DS GovBR).
+ *
+ * Camada 1: palette.css  -> paleta crua gerada do Figma (--ds-*)
+ * Camada 2: este arquivo -> tokens SEMÂNTICOS e escalas
+ *
+ * O arquivo do Figma não tem camada semântica (ver docs/figma-extracao.md §4.1).
+ * Os mapeamentos abaixo foram deduzidos do uso nos componentes do Figma e do
+ * GOV.BR DS. Justificativas em docs/design-system-mapeamento.md.
+ */
+
+:root {
+  /* ---------- Cores de base ---------- */
+  --background: var(--ds-pure-0);
+  --foreground: var(--ds-gray-80);            /* texto padrão do kit */
+  --surface: var(--ds-gray-02);                /* fundo de seções/página */
+
+  --card: var(--ds-pure-0);
+  --card-foreground: var(--ds-gray-80);
+  --popover: var(--ds-pure-0);
+  --popover-foreground: var(--ds-gray-80);
+
+  /* ---------- Interativo (button emphasis=primary/secundary/tertiary) ---------- */
+  --primary: var(--ds-blue-warm-vivid-70);    /* #1351B4 */
+  --primary-foreground: var(--ds-pure-0);
+  --primary-hover: var(--ds-blue-warm-vivid-80);
+  --primary-pressed: var(--ds-blue-warm-vivid-90);
+
+  --secondary: var(--ds-pure-0);              /* botão secundário: fundo branco, texto azul */
+  --secondary-foreground: var(--ds-blue-warm-vivid-70);
+
+  /* Sobreposições de estado vistas no Figma: #1351B4 a 16% (hover) e 45% (pressed) */
+  --state-hover: rgb(19 81 180 / 0.16);
+  --state-pressed: rgb(19 81 180 / 0.45);
+  --disabled-opacity: 0.45;
+
+  --accent: var(--ds-blue-warm-vivid-10);
+  --accent-foreground: var(--ds-blue-warm-vivid-80);
+
+  --muted: var(--ds-gray-02);
+  --muted-foreground: var(--ds-gray-60);      /* #636363, contraste 5,9:1 sobre branco */
+
+  /* ---------- Bordas e foco ---------- */
+  --border: var(--ds-gray-20);                /* divisórias e cards */
+  --input: var(--ds-gray-40);                 /* borda de campos */
+  --ring: var(--ds-gold-vivid-40);            /* foco GovBR: tracejado dourado */
+
+  /* ---------- Feedback (message / message-feedback / tag status) ---------- */
+  --success: var(--ds-green-cool-vivid-50);   /* #168821 */
+  --success-subtle: var(--ds-green-cool-vivid-05);
+  --success-foreground: var(--ds-pure-0);
+
+  --destructive: var(--ds-red-vivid-50);      /* danger */
+  --destructive-subtle: var(--ds-red-vivid-10);
+  --destructive-foreground: var(--ds-pure-0);
+
+  --warning: var(--ds-yellow-vivid-20);
+  --warning-subtle: var(--ds-yellow-vivid-05);
+  --warning-foreground: var(--ds-gray-80);    /* amarelo exige texto escuro */
+
+  --info: var(--ds-blue-warm-vivid-60);
+  --info-subtle: var(--ds-blue-warm-vivid-10);
+  --info-foreground: var(--ds-pure-0);
+
+  /* ---------- Rodapé (footer type=dark) ---------- */
+  --footer: var(--ds-blue-warm-vivid-90);
+  --footer-foreground: var(--ds-pure-0);
+
+  /* ---------- Gráficos ----------
+   * O Figma não define paleta de dados. Proposta com famílias bem distintas
+   * da paleta GovBR, primeira cor = primária. Validar com o time de design. */
+  --chart-1: var(--ds-blue-warm-vivid-70);
+  --chart-2: var(--ds-mint-cool-vivid-50);
+  --chart-3: var(--ds-orange-vivid-40);
+  --chart-4: var(--ds-violet-vivid-60);
+  --chart-5: var(--ds-gold-vivid-30);
+  --chart-6: var(--ds-red-cool-vivid-50);
+  --chart-grid: var(--ds-gray-10);
+  --chart-axis: var(--ds-gray-60);
+
+  /* ---------- Tipografia ----------
+   * Rawline, escala modular 1.2 com base 14px (font-size-scale-*). */
+  --font-family-base: "Rawline", "Raleway", system-ui, sans-serif;
+
+  --font-size-scale-down-02: 0.6075rem;   /*  9.72px */
+  --font-size-scale-down-01: 0.7294rem;   /* 11.67px */
+  --font-size-scale-base: 0.875rem;       /* 14px    */
+  --font-size-scale-up-01: 1.05rem;       /* 16.8px  */
+  --font-size-scale-up-02: 1.26rem;       /* 20.16px */
+  --font-size-scale-up-03: 1.512rem;      /* 24.19px */
+  --font-size-scale-up-04: 1.8144rem;     /* 29.03px (o h3 do Figma usa 29.3: erro corrigido) */
+  --font-size-scale-up-05: 2.1773rem;     /* 34.84px */
+  --font-size-scale-up-06: 2.6127rem;     /* 41.8px  */
+  --font-size-scale-up-07: 3.1352rem;     /* 50.16px */
+
+  /* O Figma usa line-height "auto". Valores do GOV.BR DS: */
+  --font-line-height-low: 1.15;
+  --font-line-height-medium: 1.45;
+  --font-line-height-high: 1.85;
+
+  /* ---------- Raios (sem tokens no Figma; valores mais frequentes) ---------- */
+  --radius-sm: 4px;     /* input, select, checkbox, textarea */
+  --radius-md: 8px;     /* card, header */
+  --radius-lg: 16px;
+  --radius-pill: 100em; /* button, tag */
+
+  /* ---------- Elevação (estilos ⛅ Elevação/Camada 1–4) ---------- */
+  --surface-shadow-1: 0 1px 6px rgb(51 51 51 / 0.16);
+  --surface-shadow-2: 0 3px 6px rgb(51 51 51 / 0.16);
+  --surface-shadow-3: 0 6px 6px rgb(51 51 51 / 0.16);
+  --surface-shadow-4: 0 9px 6px rgb(51 51 51 / 0.16);
+}

@@ -1,0 +1,89 @@
+/*
+ * Ponto de entrada de estilos (mesma organização do Aurora):
+ * 1. Tailwind  2. animações  3. paleta e tokens  4. mapeamento para o tema  5. ajustes globais
+ * A fonte Rawline é carregada no <head> (src/app/layout.tsx), direto do CDN do DS GovBR.
+ */
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "./palette.css";
+@import "./tokens.css";
+@import "./components.css";
+
+/*
+ * Expõe os tokens ao Tailwind: bg-primary, text-muted-foreground, shadow-md...
+ * Os nomes padrão do Tailwind (text-sm, rounded-md, shadow-sm) passam a
+ * apontar para a escala GovBR, então componentes shadcn já saem no padrão.
+ */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-pressed: var(--primary-pressed);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-state-hover: var(--state-hover);
+  --color-state-pressed: var(--state-pressed);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-success-subtle: var(--success-subtle);
+  --color-success-foreground: var(--success-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-subtle: var(--destructive-subtle);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-warning: var(--warning);
+  --color-warning-subtle: var(--warning-subtle);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-subtle: var(--info-subtle);
+  --color-info-foreground: var(--info-foreground);
+  --color-footer: var(--footer);
+  --color-footer-foreground: var(--footer-foreground);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-chart-6: var(--chart-6);
+
+  --font-sans: var(--font-family-base);
+
+  --text-xs: var(--font-size-scale-down-01);
+  --text-sm: var(--font-size-scale-base);
+  --text-base: var(--font-size-scale-up-01);
+  --text-lg: var(--font-size-scale-up-02);
+  --text-xl: var(--font-size-scale-up-03);
+  --text-2xl: var(--font-size-scale-up-04);
+  --text-3xl: var(--font-size-scale-up-05);
+  --text-4xl: var(--font-size-scale-up-06);
+  --text-5xl: var(--font-size-scale-up-07);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-full: var(--radius-pill);
+
+  --shadow-sm: var(--surface-shadow-1);
+  --shadow-md: var(--surface-shadow-2);
+  --shadow-lg: var(--surface-shadow-3);
+  --shadow-xl: var(--surface-shadow-4);
+
+  /* Grid do Figma: 4col (320), 8col (768), 12col (1280), TV (1600).
+   * O espaçamento padrão do Tailwind (múltiplos de 4px) já coincide com a
+   * escala 4·8·12·16·24·32·40·48 encontrada no Figma. */
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 80rem;
+  --breakpoint-xl: 100rem;
+}
