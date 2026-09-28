@@ -105,21 +105,3 @@ hub-indicadores-cnie/
 | GET | `/api/indicadores/{id}/territorios?periodo=2026-38` | próprio |
 
 Documentação interativa em http://localhost:8000/docs.
-
-## Atualizar o design system
-
-1. Rode de novo o prompt de extração com o MCP do Figma.
-2. Substitua `docs/figma-extracao.md`.
-3. `python scripts/figma_to_palette.py`
-4. Confira `/design-system`.
-
-## Próximos passos
-
-- [ ] Validar decisões D1–D5 (`docs/aurora-inventario.md`) e a camada semântica de cores com o time
-- [ ] Unificar tokens com o `tokens.css` do Aurora
-- [ ] Validar os indicadores reais com a área técnica e conectar as fontes de dados
-- [ ] Alembic para migrações
-- [ ] Mapa por UF (Leaflet), reaproveitando o `RiskMap` do Aurora
-- [ ] Seletor de semana epidemiológica (`EpiWeekCalendar` do Aurora)
-- [ ] Autenticação (decisão D4)
-- [ ] CI com testes da API, lint e build da web
